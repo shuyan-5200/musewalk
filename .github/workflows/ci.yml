@@ -15,7 +15,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     permissions:
       contents: read
       pages: read
@@ -69,7 +69,7 @@ jobs:
             fi
             sleep 1
           done
-          VERIFY_URL=http://127.0.0.1:5175 VERIFY_LABEL=ci npm run verify
+          VERIFY_URL=http://127.0.0.1:5175 VERIFY_LABEL=ci VERIFY_SLOW=1 VERIFY_SIZE=960x600 npm run verify
 
       - name: Upload Pages artifact
         if: steps.pages.outputs.enabled == 'true'

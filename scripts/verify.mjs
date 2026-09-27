@@ -9,9 +9,14 @@ const VERIFY_URL = process.env.VERIFY_URL || 'http://127.0.0.1:5173';
 const TOUCH = process.env.VERIFY_TOUCH === '1';
 const VERIFY_LABEL = process.env.VERIFY_LABEL || (TOUCH ? 'touch' : 'desktop');
 const OUT = fileURLToPath(new URL(`../shots/verify-${VERIFY_LABEL}/`, import.meta.url));
+// 慢速环境（如没有显卡的 CI 机器，软件渲染可能不到 1 帧/秒）：VERIFY_SLOW=1 把等待时间放宽 4 倍。
+// VERIFY_SIZE=800x500 可缩小桌面窗口，减轻软件渲染负担。
+const SLOW = process.env.VERIFY_SLOW === '1';
+const T = (ms) => (SLOW ? ms * 4 : ms);
+const [SIZE_W, SIZE_H] = (process.env.VERIFY_SIZE || '1366x860').split('x').map(Number);
 const VIEWPORT = TOUCH
   ? { width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true }
-  : { width: 1366, height: 860, deviceScaleFactor: 1 };
+  : { width: SIZE_W || 1366, height: SIZE_H || 860, deviceScaleFactor: 1 };
 fs.mkdirSync(OUT, { recursive: true });
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -34,8 +39,8 @@ function browserPath() {
 const browser = await puppeteer.launch({
   executablePath: browserPath(),
   headless: true,
-  timeout: 120000,
-  protocolTimeout: 120000,
+  timeout: T(120000),
+  protocolTimeout: T(120000),
   args: [
     '--no-sandbox', '--enable-unsafe-swiftshader', '--use-angle=swiftshader',
     `--window-size=${VIEWPORT.width},${VIEWPORT.height}`,
@@ -62,7 +67,7 @@ page.on('framenavigated', (frame) => {
 });
 
 const inState = (state, timeout = 90000) =>
-  page.waitForFunction((expected) => window.__musewalk?.state?.() === expected, { timeout }, state);
+  page.waitForFunction((expected) => window.__musewalk?.state?.() === expected, { timeout: T(timeout) }, state);
 const shot = async (name) => {
   await page.screenshot({ path: `${OUT}${name}.png` });
   const state = await page.evaluate(() => window.__musewalk?.state?.() ?? '?');
@@ -92,7 +97,7 @@ const clickSoundAndCheck = async (expectedMuted, scene) => {
   assert(after.on === !expectedMuted && after.pressed === String(!expectedMuted), `${scene}：视觉/aria 状态与音乐不一致`);
 };
 // 第一人称半径要等镜头阻尼收敛再判断：软渲染帧率抖动时，状态切换那一刻可能还差几毫米。
-const settledRadius = async (limit = 0.01, timeout = 2000) => {
+const settledRadius = async (limit = 0.01, timeout = T(2000)) => {
   try {
     await page.waitForFunction((max) => window.__musewalk.viewRadius() < max, { timeout, polling: 50 }, limit);
   } catch {}
@@ -101,7 +106,7 @@ const settledRadius = async (limit = 0.01, timeout = 2000) => {
 const enterDreamFromFocus = async () => {
   if (TOUCH) {
     await page.touchscreen.tap(Math.round(VIEWPORT.width * 0.5), Math.round(VIEWPORT.height * 0.45));
-    await sleep(420); // 单击需等待 300ms，以便与双击返回区分。
+    await sleep(T(420)); // 单击需等待 300ms，以便与双击返回区分。
   } else {
     await page.click('.p-enter');
   }
@@ -109,10 +114,10 @@ const enterDreamFromFocus = async () => {
 };
 
 try {
-  await page.goto(VERIFY_URL, { waitUntil: 'networkidle2', timeout: 90000 });
+  await page.goto(VERIFY_URL, { waitUntil: 'networkidle2', timeout: T(90000) });
   await inState('landing');
-  await page.waitForSelector('.l-enter:not([disabled])', { timeout: 90000 });
-  await page.waitForSelector('.veil.hidden', { timeout: 10000 });
+  await page.waitForSelector('.l-enter:not([disabled])', { timeout: T(90000) });
+  await page.waitForSelector('.veil.hidden', { timeout: T(10000) });
   watchNavigation = true;
 
   const summary = await page.evaluate(() => window.__musewalk.configSummary());
@@ -153,7 +158,7 @@ try {
   const p0 = await page.evaluate(() => window.__musewalk.pos());
   await page.keyboard.down('KeyW');
   let walked = 0;
-  for (let i = 0; i < 40 && walked < 1; i++) {
+  for (let i = 0; i < (SLOW ? 240 : 40) && walked < 1; i++) {
     await sleep(250);
     const p1 = await page.evaluate(() => window.__musewalk.pos());
     walked = Math.hypot(p1[0] - p0[0], p1[2] - p0[2]);
@@ -171,8 +176,8 @@ try {
   }
 
   await page.evaluate((wingId, artistId) => window.__musewalk.enterGalleryById(wingId, artistId), targetWing.id, targetArtist);
-  await page.waitForSelector('.hall-intro.show', { timeout: 90000 });
-  await page.waitForSelector('.gi-go.show', { timeout: 120000 });
+  await page.waitForSelector('.hall-intro.show', { timeout: T(90000) });
+  await page.waitForSelector('.gi-go.show', { timeout: T(120000) });
   await clickSoundAndCheck(false, '展廊引言过场');
   await clickSoundAndCheck(true, '展廊引言过场');
   await shot('5-gallery-intro');
@@ -184,7 +189,7 @@ try {
   await shot(`6-gallery-${targetArtist}`);
 
   await page.evaluate((workId) => window.__musewalk.focusWork(workId), targetWork);
-  await page.waitForSelector('.panel.show', { timeout: 90000 });
+  await page.waitForSelector('.panel.show', { timeout: T(90000) });
   await clickSoundAndCheck(false, '品读');
   await clickSoundAndCheck(true, '品读');
   const firstFocusRadius = await page.evaluate(() => window.__musewalk.viewRadius());
@@ -194,14 +199,14 @@ try {
   assert(await page.evaluate(() => window.__musewalk.dreamMode()) === 'flat', '入画必须默认为原作平面');
   await clickSoundAndCheck(false, '原作画境');
   await page.click('.dream-mode');
-  await page.waitForFunction(() => window.__musewalk.dreamMode() === 'solid', { timeout: 3000 });
+  await page.waitForFunction(() => window.__musewalk.dreamMode() === 'solid', { timeout: T(3000) });
   await page.click('.dream-mode');
-  await page.waitForFunction(() => window.__musewalk.dreamMode() === 'flat', { timeout: 3000 });
+  await page.waitForFunction(() => window.__musewalk.dreamMode() === 'flat', { timeout: T(3000) });
   await shot('8-dream-flat-default');
 
   // 用立体模式进星尘，验证「回到画境」保留用户的上一步选择。
   await page.click('.dream-mode');
-  await page.waitForFunction(() => window.__musewalk.dreamMode() === 'solid', { timeout: 3000 });
+  await page.waitForFunction(() => window.__musewalk.dreamMode() === 'solid', { timeout: T(3000) });
   await page.click('.dream-star');
   await inState('immersion');
   await clickSoundAndCheck(true, '星尘');
@@ -222,7 +227,7 @@ try {
       if (!button) return false;
       const rect = button.getBoundingClientRect();
       return rect.width > 1 && rect.height > 1 && rect.left >= 0 && rect.right <= innerWidth + 1;
-    }, { timeout: 5000 });
+    }, { timeout: T(5000) });
   }
   await enterDreamFromFocus();
   assert(await page.evaluate(() => window.__musewalk.dreamMode()) === 'flat', '从画前重新入画必须默认原画');
