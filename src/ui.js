@@ -262,10 +262,11 @@ export function createUI(cb) {
       return new Promise((r) => setTimeout(r, dur + 30));
     },
 
-    hud(show, { soundOnly = false, landingMode = false } = {}) {
+    hud(show, { soundOnly = false, landingMode = false, keepHome = false } = {}) {
       crumb.classList.toggle('show', show);
       tools.classList.toggle('show', show || soundOnly);
       tools.classList.toggle('sound-only', soundOnly);
+      tools.classList.toggle('keep-home', soundOnly && keepHome); // 画境 / 星尘：音乐键 + 回展廊键
       tools.classList.toggle('landing-mode', landingMode);
     },
 

@@ -258,6 +258,27 @@ function crumbName(name = '') {
   return /[\u3400-\u9fff]/u.test(name) ? name.replace(/ /g, '') : name;
 }
 
+// ---------- 右上角回退键：按所在位置决定「回哪里」 ----------
+// 馆内（圆形画屏厅）       → 厅：回中央大厅（refreshZone 设置）
+// 艺术家展廊（走廊）        → 馆：回到这座馆的圆形画屏厅
+// 品读 / 画境 / 星尘        → 廊：一键回到这位艺术家的展廊（未来馆就地品读则回到该馆）
+function setHallHomeButton() {
+  const wing = currentDoor ? gallery.wings[currentDoor.wingIndex] : null;
+  ui.homeButton(label('wingHomeLabel'), `${label('wingHomeTipPrefix')}${wingShortName(wing)}${label('wingHomeTipSuffix')}`);
+  ui.showHome(true);
+}
+
+function setPaintingHomeButton() {
+  if (focusReturn === 'lobby') {
+    const wing = zone >= 0 ? gallery.wings[zone] : null;
+    ui.homeButton(label('wingHomeLabel'), `${label('wingHomeTipPrefix')}${wingShortName(wing)}${label('wingHomeTipSuffix')}`);
+  } else {
+    const artist = currentDoor ? gallery.wings[currentDoor.wingIndex]?.artists[currentDoor.artistIndex] : null;
+    ui.homeButton(label('galleryHomeLabel'), `${label('galleryHomeTipPrefix')}${crumbName(artist?.name || '')}${label('galleryHomeTipSuffix')}`);
+  }
+  ui.showHome(true);
+}
+
 // ---------- 启动 ----------
 async function boot() {
   ui.setLoad(0.05);
@@ -393,8 +414,7 @@ async function enterArtistGallery(wingIndex, artistIndex) {
     rig.teleport(wrap.entry.pos, wrap.entry.yaw, wrap.entry.pitch);
     bloomTarget = 0.55;
     ui.crumb(`${wing.no} · ${crumbName(artist.name)}`);
-    ui.homeButton(label('wingHomeLabel'), `${label('wingHomeTipPrefix')}${wingShortName(wing)}${label('wingHomeTipSuffix')}`);
-    ui.showHome(true);
+    setHallHomeButton();
   };
 
   // 代表作纹理缺失（极少数）→ 退回原黑场过门
@@ -522,9 +542,10 @@ async function backToCorridor() {
 }
 
 async function goHome() {
-  // 聚焦态（仅触摸）：点右上角圆键 = 退出聚焦，等同双击画作返回
-  if (state === 'focus') { if (IS_TOUCH) closeFocus(); return; }
-  // 展廊内：先回长廊；馆廊内：回大厅中心
+  // 品读 / 画境 / 星尘：一键回到展廊（未来馆就地品读则回到该馆）
+  if (state === 'focus') { closeFocus(); return; }
+  if (state === 'dream' || state === 'immersion') { returnFromPainting(); return; }
+  // 展廊内：回到这座馆；馆内：回中央大厅
   if (state === 'hall') { backToCorridor(); return; }
   if (state !== 'lobby' || zone < 0) return;
   state = 'transition';
@@ -544,6 +565,7 @@ function focusWork(entry, from = 'hall') {
   focusReturn = from;
   state = 'focus';
   focusEntry = entry;
+  setPaintingHomeButton();
   ui.caption(null);
   clearHover();
   const vfov = (camera.fov * Math.PI) / 180;
@@ -585,6 +607,7 @@ function closeFocus() {
   if (state !== 'focus') return;
   const back = focusReturn;
   state = 'transition';
+  if (back !== 'lobby') setHallHomeButton();
   document.body.classList.remove('focus-mobile');
   ui.panel(null);
   ui.vignette(false);
@@ -616,7 +639,7 @@ function mountDreamScene(entry, opts) {
   bloomTarget = 0.5;
   rig.beginOrbit(dream.orbit);
   ui.vignette(true);
-  ui.hud(false, { soundOnly: true });
+  ui.hud(false, { soundOnly: true, keepHome: true });
   ui.dream(entry.work, dream.poem);
   ui.dreamMode(dream.mode, dream.hasModes);
 }
@@ -722,6 +745,40 @@ async function exitDream() {
   if (IS_TOUCH) document.body.classList.add('focus-mobile');
   ui.hint(H.focus, IS_TOUCH);
   audio.setMode('hall');
+}
+
+// ---------- 画境 / 星尘 → 一键回展廊 ----------
+async function returnFromPainting() {
+  const from = state;
+  if (from !== 'dream' && from !== 'immersion') return;
+  state = 'transition';
+  document.body.classList.remove('dream-mobile', 'immersion-mobile');
+  ui.hint(null);
+  ui.caption(null);
+  if (from === 'dream') {
+    ui.dream(null);
+  } else {
+    ui.immersion(null);
+    immersion.fadeTarget = 0;
+    immersion.fadeRate = 3;
+  }
+  await ui.veil(true, { dur: 700 });
+  if (from === 'dream') {
+    dream.dispose();
+    rig.endOrbit();
+  } else {
+    immersion.dispose();
+  }
+  rig.mode = 'locked';
+  rig.controls.enabled = false;
+  if (focusPose) rig.setPose(focusPose);
+  renderPass.scene = active.scene;
+  bloomTarget = focusReturn === 'lobby' ? 0.42 : 0.55;
+  ui.hud(true);
+  audio.setMode('hall');
+  state = 'focus';
+  closeFocus();                         // 从画前后退回漫游（与品读里点「回展廊」同一条路径）
+  await ui.veil(false, { dur: 900 });
 }
 
 // ---------- 星尘（第二段）退出 ----------
@@ -984,6 +1041,7 @@ window.__musewalk = {
   viewRadius: () => camera.position.distanceTo(rig.pos),
   audioMuted: () => audio.muted,
   dreamMode: () => dream.mode,
+  labels: () => ({ ...(gallery?.ui || {}) }),
   enterGalleryById: (wingId, artistId) => {
     const wi = gallery?.wings.findIndex((wing) => wing.id === wingId) ?? -1;
     const ai = wi >= 0 ? gallery.wings[wi].artists.findIndex((artist) => artist.id === artistId) : -1;

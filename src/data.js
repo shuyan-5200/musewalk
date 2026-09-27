@@ -41,6 +41,10 @@ const UI_DEFAULTS = {
   wingHomeLabel: 'Wing',
   wingHomeTipPrefix: 'Back to ',
   wingHomeTipSuffix: ' Wing',
+  // 品读 / 画境 / 星尘里：一键回到这位艺术家的展廊
+  galleryHomeLabel: 'Gallery',
+  galleryHomeTipPrefix: 'Back to ',
+  galleryHomeTipSuffix: "'s gallery",
   futureIntroGoText: '— tap to continue —',
   hallIntroGoText: '— click anywhere to enter —',
   galleryLoadingLine: 'Hanging the paintings · lighting the lamps',

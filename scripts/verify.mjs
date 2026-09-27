@@ -103,11 +103,44 @@ const settledRadius = async (limit = 0.01, timeout = T(2000)) => {
   } catch {}
   return page.evaluate(() => window.__musewalk.viewRadius());
 };
+let labels = {}; // 当前配置的界面文案（进页面后读取）
+// 右上角回退键（音乐键旁边那颗）：文案、是否可见、是否真的点得到（没被别的层挡住）。
+const homeState = () => page.evaluate(() => {
+  const button = document.querySelector('.hud-tools .tool-btn:not(.sound-btn)');
+  if (!button) return { visible: false };
+  const style = getComputedStyle(button);
+  const tools = button.closest('.hud-tools');
+  const rect = button.getBoundingClientRect();
+  const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+  return {
+    label: button.firstChild?.textContent || '',
+    visible: style.display !== 'none' && tools.classList.contains('show') && rect.width > 0,
+    clickable: style.pointerEvents !== 'none' && (hit === button || button.contains(hit)),
+  };
+});
+const expectHome = async (expectedLabel, scene) => {
+  const home = await homeState();
+  assert(home.visible && home.clickable, `${scene}：右上角回退键不可见或点不到`);
+  assert(home.label === expectedLabel, `${scene}：右上角回退键应为「${expectedLabel}」，实际「${home.label}」`);
+};
+const clickHomeBackToHall = async (scene) => {
+  await expectHome(labels.galleryHomeLabel, scene);
+  await page.click('.hud-tools .tool-btn:not(.sound-btn)');
+  await inState('hall');
+  await expectHome(labels.wingHomeLabel, `${scene}返回后的展廊`);
+};
 const enterDreamFromFocus = async () => {
   if (TOUCH) {
     await page.touchscreen.tap(Math.round(VIEWPORT.width * 0.5), Math.round(VIEWPORT.height * 0.45));
     await sleep(T(420)); // 单击需等待 300ms，以便与双击返回区分。
   } else {
+    // 信息面板从右侧滑入（约 1s）：按钮完整进入视口后再点
+    await page.waitForFunction(() => {
+      const button = document.querySelector('.panel.show .p-enter');
+      if (!button) return false;
+      const rect = button.getBoundingClientRect();
+      return rect.width > 1 && rect.height > 1 && rect.left >= 0 && rect.right <= innerWidth + 1;
+    }, { timeout: T(5000) });
     await page.click('.p-enter');
   }
   await inState('dream');
@@ -121,6 +154,7 @@ try {
   watchNavigation = true;
 
   const summary = await page.evaluate(() => window.__musewalk.configSummary());
+  labels = await page.evaluate(() => window.__musewalk.labels());
   assert(summary.depthPolicy === 'uniform-auto', '发布基线必须是全馆 uniform-auto 深度策略');
   // 巡检目标从配置里取：官方 Demo 固定走梵高《星月夜》；自己的美术馆取第一个常规馆的第一位艺术家。
   // 也可以用 VERIFY_WING / VERIFY_ARTIST / VERIFY_WORK 指定。
@@ -238,6 +272,7 @@ try {
   const stardustFocusRadius = await page.evaluate(() => window.__musewalk.viewRadius());
   assert(Math.abs(stardustFocusRadius - firstFocusRadius) < 0.02, '星尘返回后应原样恢复品读构图');
   await shot('10-back-to-focus');
+  await expectHome(labels.galleryHomeLabel, '品读');
 
   if (TOUCH) {
     // Headless Chrome 会合并连续 touchscreen.tap；在真实 canvas 上派发两组 pointer
@@ -259,6 +294,24 @@ try {
   await inState('hall');
   const releasedRadius = await settledRadius();
   assert(releasedRadius < 0.01, `退出品读后漫游镜头半径异常：${releasedRadius.toFixed(4)}m`);
+  await expectHome(labels.wingHomeLabel, '展廊');
+
+  // 右上角「回展廊」：品读、画境、星尘三处都要一键回到展廊。
+  await page.evaluate((workId) => window.__musewalk.focusWork(workId), targetWork);
+  await page.waitForSelector('.panel.show', { timeout: T(90000) });
+  await clickHomeBackToHall('品读');
+  await page.evaluate((workId) => window.__musewalk.focusWork(workId), targetWork);
+  await page.waitForSelector('.panel.show', { timeout: T(90000) });
+  await enterDreamFromFocus();
+  await clickHomeBackToHall('画境');
+  await page.evaluate((workId) => window.__musewalk.focusWork(workId), targetWork);
+  await page.waitForSelector('.panel.show', { timeout: T(90000) });
+  await enterDreamFromFocus();
+  await page.click('.dream-star');
+  await inState('immersion');
+  await clickHomeBackToHall('星尘');
+  const homeRadius = await settledRadius();
+  assert(homeRadius < 0.01, `一键回展廊后漫游镜头半径异常：${homeRadius.toFixed(4)}m`);
   await page.evaluate(() => window.__musewalk.backToLobby());
   await inState('lobby');
   await page.evaluate((index) => window.__musewalk.gotoWing(index), lastWingIndex);

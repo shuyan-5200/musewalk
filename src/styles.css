@@ -195,7 +195,8 @@ body.can-hover { cursor: pointer; }
    截胡同屏幕位置其他可见元素的点击——同类教训见 dream-ui/imm-ui 按钮 bug。 */
 .hud-tools.show .tool-btn { pointer-events: auto; }
 .hud-tools.sound-only { z-index: 46; } /* 过场 / 引言 / 幕布之上仍可随时开关音乐 */
-.hud-tools.sound-only .tool-btn:not(.sound-btn) { display: none !important; }
+/* keep-home：画境 / 星尘里仍保留「回展廊」键（显隐仍由 showHome 的行内样式控制） */
+.hud-tools.sound-only:not(.keep-home) .tool-btn:not(.sound-btn) { display: none !important; }
 /* 落地页也可随时开关音乐；与右侧语言切换留出间距。 */
 .hud-tools.landing-mode { top: 18px; right: 104px; z-index: 51; }
 .tool-btn {
