@@ -1,0 +1,107 @@
+{
+  "title": "MUSEWALK MINI",
+  "subtitle": "STEP INTO THE PAINTING",
+  "kicker": "AN IMMERSIVE VIRTUAL MUSEUM",
+  "tagline": "Classical · Modern · Future — walk among the masters, step inside a painting, dissolve into stardust.",
+  "enterLabel": "Enter the Museum",
+  "loadingLine": "Lighting the gallery lamps …",
+  "footnote": "Arrow keys / WASD to walk · Click the floor to travel · Drag to look around · Headphones recommended",
+  "wings": [
+    {
+      "id": "vangogh-mini",
+      "no": "I",
+      "name": "Van Gogh",
+      "short": "Van Gogh",
+      "latin": "VINCENT VAN GOGH",
+      "en": "The Van Gogh Mini Wing",
+      "intro": "A compact six-painting route through Van Gogh: night skies, sunflowers, blossoms, a bedroom, irises, and a cafe terrace.",
+      "accent": "#7fb4d8",
+      "wall": "#1d2734",
+      "panel": "#263344",
+      "floor": "#0a0d11",
+      "fog": "#090c10",
+      "lightColor": "#cfe4ff",
+      "frameStyle": "dark",
+      "artists": [
+        {
+          "id": "vangogh",
+          "name": "Vincent van Gogh",
+          "original": "文森特 · 梵高",
+          "dates": "1853 – 1890",
+          "place": "津德尔特 / 阿尔勒 / 奥维尔",
+          "epithet": "The Burning Sunflower",
+          "bio": "He sold one painting in his lifetime, and became the whole world's beloved after it. In ten years he made more than eight hundred canvases, pressing pain, loneliness and an almost reckless love of life into the paint, stroke by stroke, thick enough to stand. He said: 'I dream my painting, and then I paint my dream.'",
+          "works": [
+            {
+              "id": "vangogh-starry",
+              "file": "art/vangogh-starry.jpg",
+              "title": "The Starry Night",
+              "original": "星月夜",
+              "year": "1889",
+              "medium": "Oil on canvas",
+              "museum": "Museum of Modern Art, New York",
+              "desc": "Through the barred window of the asylum at Saint-Rémy, he watched the sky churn into whirlpools, stars swelling like fireworks. This is not what the night looks like — it is what the night feels like, burning inside a troubled mind.",
+              "line": "He painted the roaring in his ears into a whirlpool of stars."
+            },
+            {
+              "id": "vangogh-sunflowers",
+              "file": "art/vangogh-sunflowers.jpg",
+              "title": "Sunflowers",
+              "original": "向日葵",
+              "year": "1888",
+              "medium": "Oil on canvas",
+              "museum": "Neue Pinakothek, Munich",
+              "desc": "He painted vase after vase of sunflowers to dress the little house for Gauguin's arrival. Full bloom and withering share one vase — not flowers, but friendship, and the whole of his hunger for life.",
+              "line": "Blooming and wilting in a single vase, like his short and burning life."
+            },
+            {
+              "id": "vangogh-almond",
+              "file": "art/vangogh-almond.jpg",
+              "title": "Almond Blossom",
+              "original": "盛开的杏花",
+              "year": "1890",
+              "medium": "Oil on canvas",
+              "museum": "Van Gogh Museum, Amsterdam",
+              "desc": "Painted for a newborn nephew: white blossoms opening against a blue sky, the gentlest blessing he could imagine.",
+              "line": "He mailed an entire spring to a child just born.",
+              "wide": true
+            },
+            {
+              "id": "vangogh-bedroom",
+              "file": "art/vangogh-bedroom.jpg",
+              "title": "The Bedroom",
+              "original": "在阿尔勒的卧室",
+              "year": "1888",
+              "medium": "Oil on canvas",
+              "museum": "Van Gogh Museum, Amsterdam",
+              "desc": "The tilted floor, the paired pillows — he wanted to paint 'absolute rest', but the brushstrokes are still feverish.",
+              "line": "He painted a steady bed, and never slept well himself."
+            },
+            {
+              "id": "vangogh-irises",
+              "file": "art/vangogh-irises.jpg",
+              "title": "Irises",
+              "original": "鸢尾花",
+              "year": "1889",
+              "medium": "Oil on canvas",
+              "museum": "Getty Center, Los Angeles",
+              "desc": "The flowerbed from his first week in the asylum: every blue is struggling out of the soil.",
+              "line": "One white iris stands among the blue, the way he stood in a crowd."
+            },
+            {
+              "id": "vangogh-terrace",
+              "file": "art/vangogh-terrace.jpg",
+              "title": "Café Terrace at Night",
+              "original": "夜间咖啡馆露台",
+              "year": "1888",
+              "medium": "Oil on canvas",
+              "museum": "Kröller-Müller Museum, Otterlo",
+              "desc": "A night painted without a single stroke of black — gaslight yellow and starlit blue refusing to yield to each other.",
+              "line": "Night doesn't have to be dark — he called a sky of stars as witness."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

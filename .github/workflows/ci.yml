@@ -1,0 +1,95 @@
+name: CI
+
+# 每次 push / PR：配置检查 → 生产构建 → 12 站真实浏览器巡检。
+# 默认分支上，如果仓库在 Settings → Pages → Source 选了 "GitHub Actions"，巡检通过后自动部署到 GitHub Pages；
+# 没开 Pages（例如用 Vercel 部署）时会跳过部署，不会报错。
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      pages: ${{ steps.pages.outputs.enabled }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      # 官方仓库跑完整发布门禁；从模板或 fork 做出的自己的美术馆只跑通用配置检查。
+      - name: Release gates (official demo)
+        if: github.repository == 'shuyan-5200/musewalk'
+        run: npm run release:check
+      - name: Config check (your own museum)
+        if: github.repository != 'shuyan-5200/musewalk'
+        run: npm run check
+
+      - name: Detect GitHub Pages
+        id: pages
+        if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          build_type="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .build_type 2>/dev/null || true)"
+          if [ "$build_type" = "workflow" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "SITE_URL=$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .html_url)" >> "$GITHUB_ENV"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::GitHub Pages is not set to 'GitHub Actions'; skipping the Pages deploy."
+          fi
+
+      - run: npm run build
+
+      - name: Production browser walkthrough
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 5175 --strictPort > /tmp/musewalk-preview.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:5175/ > /dev/null; then
+              break
+            fi
+            if [ "$attempt" -eq 30 ]; then
+              cat /tmp/musewalk-preview.log
+              exit 1
+            fi
+            sleep 1
+          done
+          VERIFY_URL=http://127.0.0.1:5175 VERIFY_LABEL=ci npm run verify
+
+      - name: Upload Pages artifact
+        if: steps.pages.outputs.enabled == 'true'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.pages == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

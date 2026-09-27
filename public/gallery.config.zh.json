@@ -1,0 +1,588 @@
+{
+  "title": "MUSEWALK",
+  "subtitle": "入 画 美 术 馆",
+  "kicker": "AN IMMERSIVE VIRTUAL MUSEUM",
+  "tagline": "古典 · 现代 · 未来 ── 沉浸于大师真迹，步入画境，走向仍在生长的未来",
+  "enterLabel": "进 入 美 术 馆",
+  "loadingLine": "正在点亮展灯 …",
+  "footnote": "方向键 / WASD 漫步 · 点击地面前往 · 拖拽环顾 · 建议佩戴耳机",
+  "wings": [
+    {
+      "id": "classical",
+      "no": "I",
+      "name": "古典 · 众神与永恒",
+      "short": "古典馆",
+      "latin": "LUMEN AETERNUM",
+      "en": "The Classical Wing",
+      "intro": "当颜料尚由匠人手工研磨，光便已学会在画布上永驻。这里陈列的，是人类初次凝视自身时，留下的最深情的目光。",
+      "accent": "#d4af5a",
+      "wall": "#33191c",
+      "panel": "#422026",
+      "floor": "#0e0a09",
+      "fog": "#0f0908",
+      "lightColor": "#ffd9a8",
+      "frameStyle": "gold",
+      "artists": [
+        {
+          "id": "davinci",
+          "name": "列奥纳多 · 达 · 芬奇",
+          "original": "Leonardo da Vinci",
+          "dates": "1452 – 1519",
+          "place": "文奇镇 / 米兰 / 昂布瓦兹",
+          "epithet": "文艺复兴本身",
+          "bio": "画家、解剖学家、工程师、梦想家——他是「文艺复兴人」一词的终极注脚。他作画极慢，传世真迹不足二十幅，却几乎每一幅都改写了绘画史。他以烟雾般的晕涂法抹去轮廓，让「神秘」第一次有了具体的面容。",
+          "works": [
+            {
+              "id": "davinci-monalisa",
+              "file": "art/davinci-monalisa.jpg",
+              "title": "蒙娜丽莎",
+              "original": "La Gioconda",
+              "year": "c. 1503 – 1517",
+              "medium": "油彩 · 杨木板",
+              "museum": "卢浮宫 · 巴黎",
+              "desc": "世上被凝视最多的一张面孔。那一抹微笑悬于似有似无之间——五百年来无人能说清她为何而笑，而这正是达·芬奇想要的。",
+              "line": "你看她时，她也在看你。微笑在你移开视线的一瞬，悄然加深。"
+            },
+            {
+              "id": "davinci-lastsupper",
+              "file": "art/davinci-lastsupper.jpg",
+              "title": "最后的晚餐",
+              "original": "Il Cenacolo",
+              "year": "1495 – 1498",
+              "medium": "湿壁画 · 混合技法",
+              "museum": "恩宠圣母堂 · 米兰",
+              "desc": "「你们中间有一个人要出卖我。」十二种震惊在同一瞬间炸开，构图却稳如几何定理。",
+              "line": "一句话落下，桌布上的每一只手都有了心事。",
+              "wide": true
+            },
+            {
+              "id": "davinci-vitruvian",
+              "file": "art/davinci-vitruvian.jpg",
+              "title": "维特鲁威人",
+              "original": "L'Uomo Vitruviano",
+              "year": "c. 1490",
+              "medium": "钢笔 · 墨水 · 纸",
+              "museum": "学院美术馆 · 威尼斯",
+              "desc": "圆与方中张开的人体——艺术与科学在同一张纸上签了名。",
+              "line": "一个人张开双臂，便丈量了宇宙。"
+            },
+            {
+              "id": "davinci-ermine",
+              "file": "art/davinci-ermine.jpg",
+              "title": "抱银鼠的女子",
+              "original": "Dama con l’ermellino",
+              "year": "c. 1489",
+              "medium": "油彩 · 胡桃木板",
+              "museum": "恰尔托雷斯基博物馆 · 克拉科夫",
+              "desc": "米兰宫廷的少女切奇莉亚与一只白貂，两双眼睛望向画外同一处。优雅、警觉、欲言又止——达·芬奇画下了「心事」本身。",
+              "line": "她转头的那个瞬间，时间被轻轻按下了暂停。"
+            },
+            {
+              "id": "davinci-ginevra",
+              "file": "art/davinci-ginevra.jpg",
+              "title": "吉内薇拉 · 班琪",
+              "original": "Ginevra de' Benci",
+              "year": "c. 1474",
+              "medium": "油彩 · 木板",
+              "museum": "国家美术馆 · 华盛顿",
+              "desc": "杜松环绕的苍白面孔，美洲大陆唯一一幅达·芬奇——她的平静之下藏着倔强。",
+              "line": "她不笑，这正是她动人的方式。"
+            },
+            {
+              "id": "davinci-rocks",
+              "file": "art/davinci-rocks.jpg",
+              "title": "岩间圣母",
+              "original": "Vergine delle rocce",
+              "year": "c. 1483 – 1486",
+              "medium": "油彩 · 木板",
+              "museum": "卢浮宫 · 巴黎",
+              "desc": "幽暗岩窟中，圣母、天使与两个孩子构成金字塔——神迹第一次发生在地质学里。",
+              "line": "岩石有多古老，温柔就有多深。"
+            }
+          ]
+        },
+        {
+          "id": "vermeer",
+          "name": "约翰内斯 · 维米尔",
+          "original": "Johannes Vermeer",
+          "dates": "1632 – 1675",
+          "place": "代尔夫特",
+          "epithet": "光的炼金术士",
+          "bio": "一生几乎未曾离开代尔夫特小城，留下的画作不过三十余幅。他不画神祇与战争，只画窗边的一刻安静：倒牛奶的女仆、读信的女子。他将平凡日常研磨成珍珠的光泽，让「宁静」成为荷兰黄金时代最贵重的颜料。",
+          "works": [
+            {
+              "id": "vermeer-pearl",
+              "file": "art/vermeer-pearl.jpg",
+              "title": "戴珍珠耳环的少女",
+              "original": "Meisje met de parel",
+              "year": "c. 1665",
+              "medium": "油彩 · 画布",
+              "museum": "莫瑞泰斯皇家美术馆 · 海牙",
+              "desc": "被称作「北方的蒙娜丽莎」。少女回眸，唇瓣微启，一颗珍珠在阴影里盛住了整幅画的光。她不是一幅肖像，而是一次永恒的回头。",
+              "line": "她回眸的弧度里，藏着整个十七世纪的黄昏。"
+            },
+            {
+              "id": "vermeer-milkmaid",
+              "file": "art/vermeer-milkmaid.jpg",
+              "title": "倒牛奶的女仆",
+              "original": "De Melkmeid",
+              "year": "c. 1658",
+              "medium": "油彩 · 画布",
+              "museum": "荷兰国立博物馆 · 阿姆斯特丹",
+              "desc": "牛奶自陶罐倾下，成为美术史上最著名的一道细流。面包的颗粒、粗布的褶皱、墙上的钉痕——维米尔让一间厨房，安静得像一座教堂。",
+              "line": "那道牛奶流了三百余年，至今仍未落进碗里。"
+            },
+            {
+              "id": "vermeer-lacemaker",
+              "file": "art/vermeer-lacemaker.jpg",
+              "title": "花边女工",
+              "original": "De kantwerkster",
+              "year": "c. 1669 – 1670",
+              "medium": "油彩 · 画布",
+              "museum": "卢浮宫 · 巴黎",
+              "desc": "维米尔最小的一幅画：全部世界收拢于指尖一根丝线。",
+              "line": "整个宇宙，此刻只有一根线那么宽。"
+            },
+            {
+              "id": "vermeer-astronomer",
+              "file": "art/vermeer-astronomer.jpg",
+              "title": "天文学家",
+              "original": "De astronoom",
+              "year": "1668",
+              "medium": "油彩 · 画布",
+              "museum": "卢浮宫 · 巴黎",
+              "desc": "指尖转动天球仪，仿佛宇宙可以被一只手温柔拨动。",
+              "line": "他伸手碰了碰星空的模型，星空毫无察觉。"
+            },
+            {
+              "id": "vermeer-delft",
+              "file": "art/vermeer-delft.jpg",
+              "title": "代尔夫特一景",
+              "original": "Gezicht op Delft",
+              "year": "c. 1660 – 1661",
+              "medium": "油彩 · 画布",
+              "museum": "莫瑞泰斯皇家美术馆 · 海牙",
+              "desc": "云隙的光斑落在故乡屋顶上——普鲁斯特称它是「世上最美的画」。",
+              "line": "云影移过小城，那一分钟被永远扣留。",
+              "wide": true
+            },
+            {
+              "id": "vermeer-letter",
+              "file": "art/vermeer-letter.jpg",
+              "title": "窗前读信的少女",
+              "original": "Brieflezend meisje bij het venster",
+              "year": "c. 1657",
+              "medium": "油彩 · 画布",
+              "museum": "历代大师画廊 · 德累斯顿",
+              "desc": "窗光、帷幔与一封信；修复后墙上的丘比特重见天日——原来这是一封情书。",
+              "line": "信纸的折痕里，住着一个不在场的人。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modern",
+      "no": "II",
+      "name": "现代 · 光与瞬间",
+      "short": "现代馆",
+      "latin": "LA LUMIÈRE ET L’INSTANT",
+      "en": "The Modern Wing",
+      "intro": "十九世纪的画家走出画室，发现阳光每一秒都在改变世界。从此绘画不再描摹永恒，而开始追逐瞬间——以及瞬间背后，那颗滚烫的心。",
+      "accent": "#7fb4d8",
+      "wall": "#1d2734",
+      "panel": "#263344",
+      "floor": "#0a0d11",
+      "fog": "#090c10",
+      "lightColor": "#cfe4ff",
+      "frameStyle": "dark",
+      "artists": [
+        {
+          "id": "vangogh",
+          "name": "文森特 · 梵高",
+          "original": "Vincent van Gogh",
+          "dates": "1853 – 1890",
+          "place": "津德尔特 / 阿尔勒 / 奥维尔",
+          "epithet": "燃烧的向日葵",
+          "bio": "生前只卖出一幅画，死后成为全人类的挚爱。他在十年间画下八百余幅油画，以厚重到几乎立起的笔触，把痛苦、孤独与对生命近乎莽撞的热爱，一笔一笔按进画布。他说：「我梦见我的画，然后画下我的梦。」",
+          "works": [
+            {
+              "id": "vangogh-starry",
+              "file": "art/vangogh-starry.jpg",
+              "title": "星月夜",
+              "original": "The Starry Night",
+              "year": "1889",
+              "medium": "油彩 · 画布",
+              "museum": "现代艺术博物馆 · 纽约",
+              "desc": "圣雷米疗养院的铁窗外，他看见天空如漩涡翻涌，星辰巨大如花火。这不是夜空的样子——这是夜空，在一颗痛苦心灵中燃烧的样子。",
+              "line": "他把耳边的轰鸣，画成了天上的漩涡。"
+            },
+            {
+              "id": "vangogh-sunflowers",
+              "file": "art/vangogh-sunflowers.jpg",
+              "title": "向日葵",
+              "original": "Tournesols",
+              "year": "1888",
+              "medium": "油彩 · 画布",
+              "museum": "新绘画陈列馆 · 慕尼黑",
+              "desc": "为迎接高更的到来，他画下一瓶瓶向日葵装点小屋。从盛放到枯萎同插一瓶——他画的不是花，是友谊与生命全部的热望。",
+              "line": "枯萎与盛放共处一瓶，正如他短促而滚烫的一生。"
+            },
+            {
+              "id": "vangogh-almond",
+              "file": "art/vangogh-almond.jpg",
+              "title": "盛开的杏花",
+              "original": "Amandelbloesem",
+              "year": "1890",
+              "medium": "油彩 · 画布",
+              "museum": "梵高博物馆 · 阿姆斯特丹",
+              "desc": "为侄儿出生而画：蓝天上伸展的白花，是他能想到的最温柔的祝福。",
+              "line": "他把整个春天，寄给了一个刚出生的孩子。",
+              "wide": true
+            },
+            {
+              "id": "vangogh-terrace",
+              "file": "art/vangogh-terrace.jpg",
+              "title": "夜间咖啡馆露台",
+              "original": "Caféterras bij nacht",
+              "year": "1888",
+              "medium": "油彩 · 画布",
+              "museum": "克勒勒-米勒博物馆 · 奥特洛",
+              "desc": "没有用一笔黑色画成的夜——煤气灯的黄与星空的蓝互不相让。",
+              "line": "夜可以不黑——他用一整面星空作证。"
+            },
+            {
+              "id": "vangogh-bedroom",
+              "file": "art/vangogh-bedroom.jpg",
+              "title": "在阿尔勒的卧室",
+              "original": "De slaapkamer",
+              "year": "1888",
+              "medium": "油彩 · 画布",
+              "museum": "梵高博物馆 · 阿姆斯特丹",
+              "desc": "倾斜的地板、成对的枕头——他想画「绝对的休息」，笔触却仍在发烫。",
+              "line": "他画了一张安稳的床，自己却从未睡好。"
+            },
+            {
+              "id": "vangogh-irises",
+              "file": "art/vangogh-irises.jpg",
+              "title": "鸢尾花",
+              "original": "Irises",
+              "year": "1889",
+              "medium": "油彩 · 画布",
+              "museum": "盖蒂中心 · 洛杉矶",
+              "desc": "入院第一周画下的花圃：每一朵蓝都在挣脱土壤。",
+              "line": "一朵白鸢尾混在蓝色里，像他混在人群中。"
+            },
+            {
+              "id": "vangogh-rhone",
+              "file": "art/vangogh-rhone.jpg",
+              "title": "罗纳河上的星夜",
+              "original": "Nuit étoilée sur le Rhône",
+              "year": "1888",
+              "medium": "油彩 · 画布",
+              "museum": "奥赛博物馆 · 巴黎",
+              "desc": "煤气灯的倒影与北斗七星同河共眠，岸边立着一对恋人。",
+              "line": "星星落进河里，连成了岸上的灯。"
+            },
+            {
+              "id": "vangogh-self",
+              "file": "art/vangogh-self.jpg",
+              "title": "自画像",
+              "original": "Portrait de l’artiste",
+              "year": "1889",
+              "medium": "油彩 · 画布",
+              "museum": "奥赛博物馆 · 巴黎",
+              "desc": "蓝绿色的漩涡中，那双眼睛澄澈得令人心碎。他一生画了四十余张自画像——「因为我请不起模特，也因为我想画得比照片更深。」",
+              "line": "他凝视自己，像凝视一团不肯熄灭的火。"
+            }
+          ]
+        },
+        {
+          "id": "monet",
+          "name": "克劳德 · 莫奈",
+          "original": "Claude Monet",
+          "dates": "1840 – 1926",
+          "place": "巴黎 / 吉维尼",
+          "epithet": "追光者",
+          "bio": "「印象派」因他的一幅日出而得名。他一生只做一件事：观察光。同一座干草堆、同一面教堂、同一池睡莲，在不同的时辰被画上几十遍。晚年白内障几近失明，他仍在吉维尼的花园里，画那片越来越模糊、也越来越接近永恒的水面。",
+          "works": [
+            {
+              "id": "monet-sunrise",
+              "file": "art/monet-sunrise.jpg",
+              "title": "印象 · 日出",
+              "original": "Impression, soleil levant",
+              "year": "1872",
+              "medium": "油彩 · 画布",
+              "museum": "玛摩丹美术馆 · 巴黎",
+              "desc": "勒阿弗尔港的清晨，一轮橙日悬在雾气里。评论家讥讽它「不过是印象」，却不料为一整场艺术革命赐下了名字。",
+              "line": "那一轮太阳升起时，旧的绘画沉入了海面。"
+            },
+            {
+              "id": "monet-waterlilies",
+              "file": "art/monet-waterlilies.jpg",
+              "title": "睡莲",
+              "original": "Nymphéas",
+              "year": "1906",
+              "medium": "油彩 · 画布",
+              "museum": "芝加哥艺术博物馆",
+              "desc": "没有岸，没有天空，只有水面——云影与花同浮于一镜。莫奈晚年的睡莲，是绘画离音乐最近的一次。",
+              "line": "池水深处，沉着一整个被揉碎的天空。"
+            },
+            {
+              "id": "monet-parasol",
+              "file": "art/monet-parasol.jpg",
+              "title": "撑阳伞的女人",
+              "original": "La Promenade",
+              "year": "1875",
+              "medium": "油彩 · 画布",
+              "museum": "国家美术馆 · 华盛顿",
+              "desc": "卡米耶立于风中，裙摆、云与草浪同一个方向——这是幸福本身的速写。",
+              "line": "风把那一天吹得很轻，轻得只剩下光。"
+            },
+            {
+              "id": "monet-poppies",
+              "file": "art/monet-poppies.jpg",
+              "title": "罂粟田",
+              "original": "Les Coquelicots",
+              "year": "1873",
+              "medium": "油彩 · 画布",
+              "museum": "奥赛博物馆 · 巴黎",
+              "desc": "红点从坡顶流到坡底，母与子在花海中走了两遍。",
+              "line": "红色一路滚下山坡，夏天就这样开始。"
+            },
+            {
+              "id": "monet-rouen",
+              "file": "art/monet-rouen.jpg",
+              "title": "鲁昂大教堂 · 烈日",
+              "original": "La Cathédrale de Rouen, plein soleil",
+              "year": "1893",
+              "medium": "油彩 · 画布",
+              "museum": "奥赛博物馆 · 巴黎",
+              "desc": "石头在他笔下失去了重量，化作一面光的瀑布。",
+              "line": "他画的不是教堂，是教堂上正在燃烧的时间。"
+            },
+            {
+              "id": "monet-magpie",
+              "file": "art/monet-magpie.jpg",
+              "title": "喜鹊",
+              "original": "La Pie",
+              "year": "1869",
+              "medium": "油彩 · 画布",
+              "museum": "奥赛博物馆 · 巴黎",
+              "desc": "雪原上一只黑鸟，影子却是蓝紫色的——印象派从这片雪开始重新观察阴影。",
+              "line": "雪不是白的，阴影不是黑的，喜鹊知道。",
+              "wide": true
+            }
+          ]
+        },
+        {
+          "id": "munch",
+          "name": "爱德华 · 蒙克",
+          "original": "Edvard Munch",
+          "dates": "1863 – 1944",
+          "place": "奥斯陆",
+          "epithet": "灵魂的尖叫",
+          "bio": "五岁丧母、十四岁失姊，病与死在他童年便已落座。他索性掀开绘画的帷幕，让恐惧、嫉妒、爱与绝望第一次赤裸登场。表现主义自他的画布开始——艺术从此不仅描绘所见，更描绘所感。",
+          "works": [
+            {
+              "id": "munch-scream",
+              "file": "art/munch-scream.jpg",
+              "title": "呐喊",
+              "original": "Skrik",
+              "year": "1893",
+              "medium": "油彩 · 蛋彩 · 粉彩 · 纸板",
+              "museum": "挪威国家美术馆 · 奥斯陆",
+              "desc": "血色天空下，一声尖叫穿过整个现代世界。蒙克写道：「我听见自然巨大而无尽的呐喊。」画中人捂住的不是耳朵，是灵魂。",
+              "line": "桥上那声呐喊没有声音，却震聋了整个二十世纪。"
+            },
+            {
+              "id": "munch-madonna",
+              "file": "art/munch-madonna.jpg",
+              "title": "麦当娜",
+              "original": "Madonna",
+              "year": "1894",
+              "medium": "油彩 · 画布",
+              "museum": "蒙克博物馆 · 奥斯陆",
+              "desc": "圣母被画成爱与死交织的女子，神圣与情欲在暗红的漩涡中合而为一。蒙克画的不是亵渎，而是生命诞生时的那阵眩晕。",
+              "line": "在爱与死的交界处，她阖上了眼睛。"
+            },
+            {
+              "id": "munch-dance",
+              "file": "art/munch-dance.jpg",
+              "title": "生命之舞",
+              "original": "Livets dans",
+              "year": "1899 – 1900",
+              "medium": "油彩 · 画布",
+              "museum": "挪威国家美术馆 · 奥斯陆",
+              "desc": "白衣、红衣、黑衣——同一个女人的三个时刻，在仲夏夜的海边旋转。",
+              "line": "月光铺在海上，像一根烧不断的烛芯。",
+              "wide": true
+            },
+            {
+              "id": "munch-anxiety",
+              "file": "art/munch-anxiety.jpg",
+              "title": "焦虑",
+              "original": "Angst",
+              "year": "1894",
+              "medium": "油彩 · 画布",
+              "museum": "蒙克博物馆 · 奥斯陆",
+              "desc": "呐喊的那片血色天空下，这次走来一群苍白的脸。",
+              "line": "桥还是那座桥，恐惧学会了排队。"
+            }
+          ]
+        },
+        {
+          "id": "klimt",
+          "name": "古斯塔夫 · 克里姆特",
+          "original": "Gustav Klimt",
+          "dates": "1862 – 1918",
+          "place": "维也纳",
+          "epithet": "黄金时代的吻",
+          "bio": "维也纳分离派的旗手，金匠之子。他把拜占庭的金箔、埃及的纹样与世纪末的情欲熔于一炉，让肖像化作圣像，让爱欲闪耀出宗教般的光辉。他说：「所有的艺术，都是情欲的。」",
+          "works": [
+            {
+              "id": "klimt-kiss",
+              "file": "art/klimt-kiss.jpg",
+              "title": "吻",
+              "original": "Der Kuss",
+              "year": "1907 – 1908",
+              "medium": "油彩 · 金箔 · 画布",
+              "museum": "美景宫美术馆 · 维也纳",
+              "desc": "金色悬崖边，世界只剩下拥吻的两人，袍上的纹样如星河倾泻。克里姆特用一公斤金箔，称出了爱情的重量。",
+              "line": "悬崖之上，金箔纷落，一吻便是万劫不复。"
+            },
+            {
+              "id": "klimt-adele",
+              "file": "art/klimt-adele.jpg",
+              "title": "阿黛尔 · 布洛赫-鲍尔夫人 I",
+              "original": "Adele Bloch-Bauer I",
+              "year": "1907",
+              "medium": "油彩 · 金箔 · 画布",
+              "museum": "新画廊 · 纽约",
+              "desc": "「黄金中的女人」。维也纳名媛阿黛尔被镶嵌进满幅金箔，目光哀矜。它曾以天价易主，背后是一段被战火撕裂、又终获归还的家族史。",
+              "line": "她在黄金的牢笼里，安静地望着百年烟云。"
+            },
+            {
+              "id": "klimt-birch",
+              "file": "art/klimt-birch.jpg",
+              "title": "桦树林",
+              "original": "Birkenwald",
+              "year": "1903",
+              "medium": "油彩 · 画布",
+              "museum": "私人收藏",
+              "desc": "没有金箔的克里姆特：落叶铺成红毯，白桦的眼睛安静眨动。",
+              "line": "树干上的眼睛，看落叶看了一整个秋天。"
+            },
+            {
+              "id": "klimt-deathlife",
+              "file": "art/klimt-deathlife.jpg",
+              "title": "死与生",
+              "original": "Tod und Leben",
+              "year": "1910 – 1915",
+              "medium": "油彩 · 画布",
+              "museum": "利奥波德博物馆 · 维也纳",
+              "desc": "死神在左侧耐心等候，右侧生命叠成花团酣睡——没有人醒着。",
+              "line": "死神看了很久，生命睡得很甜。",
+              "wide": true
+            },
+            {
+              "id": "klimt-maiden",
+              "file": "art/klimt-maiden.jpg",
+              "title": "少女",
+              "original": "Die Jungfrau",
+              "year": "1913",
+              "medium": "油彩 · 画布",
+              "museum": "布拉格国家美术馆",
+              "desc": "沉睡的少女们卷成一朵旋转的花，梦在花瓣之间传递。",
+              "line": "一个梦，做了七个人的份。"
+            },
+            {
+              "id": "klimt-judith",
+              "file": "art/klimt-judith.jpg",
+              "title": "朱迪斯 I",
+              "original": "Judith I",
+              "year": "1901",
+              "medium": "油彩 · 金箔 · 画布",
+              "museum": "美景宫美术馆 · 维也纳",
+              "desc": "金色枷锁半开，眼神半阖——圣经的女英雄被画成了维也纳之夜。",
+              "line": "她微微仰头，胜利与情欲难分彼此。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "future",
+      "no": "III",
+      "name": "未来 · 你的美术馆",
+      "short": "未来馆",
+      "latin": "ARS FUTURA",
+      "en": "The Future Wing",
+      "intro": "这一间，留给仍在生长的未来。墙上的金框还空着——它们等待的，是下一位艺术家，也许就是你。",
+      "type": "open",
+      "frames": 6,
+      "accent": "#e8a25a",
+      "wall": "#4a4239",
+      "panel": "#5a5044",
+      "floor": "#14110d",
+      "fog": "#13100c",
+      "lightColor": "#ffeed2",
+      "frameStyle": "gold",
+      "artists": []
+    }
+  ],
+  "ui": {
+    "lobbyCrumbLabel": "大 厅 · LOBBY",
+    "mobileFootnote": "点击地面前往 · 拖拽环顾 · 建议佩戴耳机",
+    "mobileNote": "移动端为降分辨率渲染，清晰度折损较大。建议使用电脑端访问。",
+    "soundLabel": "音",
+    "soundTip": "环境音 开/关",
+    "soundOnLabel": "环境音已开启",
+    "soundOffLabel": "环境音已关闭",
+    "homeLabel": "厅",
+    "homeTip": "回到中央厅",
+    "wingHomeLabel": "馆",
+    "wingHomeTipPrefix": "回到",
+    "wingHomeTipSuffix": "馆",
+    "futureIntroGoText": "— 轻 点 继 续 —",
+    "hallIntroGoText": "— 点 击 任 意 处 入 内 —",
+    "galleryLoadingLine": "正在为您悬挂画作 · 掌灯候客",
+    "panelSwipeHint": "上滑 / 点按看简介",
+    "panelArtistLabel": "画 家",
+    "panelEnterLabel": "步 入 画 境",
+    "panelCloseLabel": "返 回",
+    "dreamStarLabel": "化 作 星 尘",
+    "dreamExitLabel": "回 到 画 前",
+    "immersionBackLabel": "回 到 画 境",
+    "immersionExitLabel": "返 回 展 厅",
+    "reservedTitle": "虚位以待",
+    "reservedOriginal": "Reserved for you",
+    "dreamModeFlat": "观 原 作",
+    "dreamModeSolid": "立 体 画 境",
+    "comingSoon": "即将开馆 · COMING SOON"
+  },
+  "hints": {
+    "lobby": "方向键 / WASD 漫步 · 点击地面前往 · 拖拽环顾 · 点击展厅入口进入",
+    "hall": "方向键 / WASD 漫步 · 点击地面前往 · 点击画作细读",
+    "focus": "点击「步入画境」，走 进 画 的 立 体 世 界",
+    "dream": "拖拽环绕观赏（可看画的背面） · 滚轮推近拉远 · 就绪时，点右下「化作星尘」",
+    "immersion": "拖拽环顾 · 画作已化作星尘，环 绕 着 你",
+    "future": "这一格仍虚位以待 · 静待下一幅画",
+    "touchLobby": "点击地面前往 · 拖拽环顾 · 点击展厅入口进入",
+    "touchHall": "点击地面前往 · 拖拽环顾 · 点击画作细读",
+    "touchFocus": "单击步入画境 · 双击返回",
+    "touchDream": "单指环绕观赏 · 双指推近拉远 · 右下「化作星尘」 · 双击返回",
+    "dreamPoems": [
+      "风从画里来，带着颜料未干的温度",
+      "慢一点 —— 让光先认识你",
+      "在这里，时间是一种很轻的东西",
+      "颜色轻轻浮动，世界安静下来",
+      "世界安静下来，只剩色彩的声音",
+      "你走进来的样子，像一句诗落进了画里"
+    ]
+  },
+  "altLang": {
+    "label": "EN",
+    "config": ""
+  }
+}

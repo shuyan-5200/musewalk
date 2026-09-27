@@ -1,0 +1,539 @@
+{
+  "title": "MUSEWALK",
+  "subtitle": "STEP INTO THE PAINTING",
+  "kicker": "AN IMMERSIVE VIRTUAL MUSEUM",
+  "tagline": "Classical · Modern · Future — walk among the masters, step inside a painting, dissolve into stardust.",
+  "enterLabel": "Enter the Museum",
+  "loadingLine": "Lighting the gallery lamps …",
+  "footnote": "Arrow keys / WASD to walk · Click the floor to travel · Drag to look around · Headphones recommended",
+  "wings": [
+    {
+      "id": "classical",
+      "no": "I",
+      "name": "Classical · Gods and Eternity",
+      "short": "古典馆",
+      "latin": "LUMEN AETERNUM",
+      "en": "The Classical Wing",
+      "intro": "When pigment was still ground by hand, light had already learned how to stay on canvas. Gathered here is humanity's first long gaze at itself — and the tenderness it left behind.",
+      "accent": "#d4af5a",
+      "wall": "#33191c",
+      "panel": "#422026",
+      "floor": "#0e0a09",
+      "fog": "#0f0908",
+      "lightColor": "#ffd9a8",
+      "frameStyle": "gold",
+      "artists": [
+        {
+          "id": "davinci",
+          "name": "Leonardo da Vinci",
+          "original": "列奥纳多 · 达 · 芬奇",
+          "dates": "1452 – 1519",
+          "place": "文奇镇 / 米兰 / 昂布瓦兹",
+          "epithet": "The Renaissance Itself",
+          "bio": "Painter, anatomist, engineer, dreamer — he is the final footnote to the words 'Renaissance man'. He painted slowly; fewer than twenty works survive, yet nearly every one rewrote the history of painting. With smoke-soft sfumato he erased the outline, and mystery had a face for the first time.",
+          "works": [
+            {
+              "id": "davinci-monalisa",
+              "file": "art/davinci-monalisa.jpg",
+              "title": "Mona Lisa",
+              "original": "蒙娜丽莎",
+              "year": "c. 1503 – 1517",
+              "medium": "Oil on poplar panel",
+              "museum": "Musée du Louvre, Paris",
+              "desc": "The most-gazed-upon face on earth. Her smile hangs between being and not-being — five centuries on, no one can say why she smiles, which is exactly what Leonardo wanted.",
+              "line": "Look at her, and she looks back — the smile deepens as you turn away."
+            },
+            {
+              "id": "davinci-lastsupper",
+              "file": "art/davinci-lastsupper.jpg",
+              "title": "The Last Supper",
+              "original": "最后的晚餐",
+              "year": "1495 – 1498",
+              "medium": "Tempera and mixed media on plaster",
+              "museum": "Santa Maria delle Grazie, Milan",
+              "desc": "'One of you will betray me.' Twelve shocks detonate in the same instant, yet the composition holds as steady as a geometric proof.",
+              "line": "One sentence falls, and every hand on the table has something to hide.",
+              "wide": true
+            },
+            {
+              "id": "davinci-vitruvian",
+              "file": "art/davinci-vitruvian.jpg",
+              "title": "Vitruvian Man",
+              "original": "维特鲁威人",
+              "year": "c. 1490",
+              "medium": "Pen and ink on paper",
+              "museum": "Gallerie dell'Accademia, Venice",
+              "desc": "A human body opened inside a circle and a square — art and science signing the same sheet of paper.",
+              "line": "A man spreads his arms, and measures the universe."
+            },
+            {
+              "id": "davinci-ermine",
+              "file": "art/davinci-ermine.jpg",
+              "title": "Lady with an Ermine",
+              "original": "抱银鼠的女子",
+              "year": "c. 1489",
+              "medium": "Oil on walnut panel",
+              "museum": "Czartoryski Museum, Kraków",
+              "desc": "Cecilia of the Milanese court and a white ermine, two pairs of eyes turned toward the same point beyond the frame. Elegant, alert, about to speak — Leonardo painted the thing itself we call an inner life.",
+              "line": "In the instant she turns her head, time is gently paused."
+            },
+            {
+              "id": "davinci-ginevra",
+              "file": "art/davinci-ginevra.jpg",
+              "title": "Ginevra de' Benci",
+              "original": "吉内薇拉 · 班琪",
+              "year": "c. 1474",
+              "medium": "Oil on panel",
+              "museum": "National Gallery of Art, Washington",
+              "desc": "A pale face ringed by juniper — the only Leonardo in the Americas. Beneath her calm there is stubbornness.",
+              "line": "She does not smile; that is precisely how she moves you."
+            },
+            {
+              "id": "davinci-rocks",
+              "file": "art/davinci-rocks.jpg",
+              "title": "Virgin of the Rocks",
+              "original": "岩间圣母",
+              "year": "c. 1483 – 1486",
+              "medium": "Oil on panel",
+              "museum": "Musée du Louvre, Paris",
+              "desc": "In a dim grotto, the Virgin, an angel and two children form a pyramid — the first miracle ever to take place inside geology.",
+              "line": "The tenderness runs as deep as the rock is old."
+            }
+          ]
+        },
+        {
+          "id": "vermeer",
+          "name": "Johannes Vermeer",
+          "original": "约翰内斯 · 维米尔",
+          "dates": "1632 – 1675",
+          "place": "代尔夫特",
+          "epithet": "The Alchemist of Light",
+          "bio": "He rarely left the small city of Delft, and left barely thirty paintings behind. He painted no gods and no wars — only a quiet moment by a window: a maid pouring milk, a girl reading a letter. He ground the everyday into the sheen of a pearl, and made stillness the most precious pigment of the Dutch Golden Age.",
+          "works": [
+            {
+              "id": "vermeer-pearl",
+              "file": "art/vermeer-pearl.jpg",
+              "title": "Girl with a Pearl Earring",
+              "original": "戴珍珠耳环的少女",
+              "year": "c. 1665",
+              "medium": "Oil on canvas",
+              "museum": "Mauritshuis, The Hague",
+              "desc": "They call her the Mona Lisa of the North. A girl glances back, lips just parted, and a single pearl holds all the painting's light inside a shadow. She is not a portrait — she is a turn of the head, made eternal.",
+              "line": "In the arc of her glance lies the dusk of an entire century."
+            },
+            {
+              "id": "vermeer-milkmaid",
+              "file": "art/vermeer-milkmaid.jpg",
+              "title": "The Milkmaid",
+              "original": "倒牛奶的女仆",
+              "year": "c. 1658",
+              "medium": "Oil on canvas",
+              "museum": "Rijksmuseum, Amsterdam",
+              "desc": "Milk tips from the jug in the most famous thin stream in art. The grain of the bread, the folds of coarse cloth, a nail-hole in the wall — Vermeer makes a kitchen as quiet as a church.",
+              "line": "Three hundred years of pouring, and the milk has never reached the bowl."
+            },
+            {
+              "id": "vermeer-lacemaker",
+              "file": "art/vermeer-lacemaker.jpg",
+              "title": "The Lacemaker",
+              "original": "花边女工",
+              "year": "c. 1669 – 1670",
+              "medium": "Oil on canvas",
+              "museum": "Musée du Louvre, Paris",
+              "desc": "Vermeer's smallest painting: the entire world gathered onto one thread at a fingertip.",
+              "line": "For this moment, the universe is exactly one thread wide."
+            },
+            {
+              "id": "vermeer-astronomer",
+              "file": "art/vermeer-astronomer.jpg",
+              "title": "The Astronomer",
+              "original": "天文学家",
+              "year": "1668",
+              "medium": "Oil on canvas",
+              "museum": "Musée du Louvre, Paris",
+              "desc": "A fingertip turns the celestial globe, as if the universe could be gently rotated by hand.",
+              "line": "He touches the model of the heavens; the heavens never notice."
+            },
+            {
+              "id": "vermeer-delft",
+              "file": "art/vermeer-delft.jpg",
+              "title": "View of Delft",
+              "original": "代尔夫特一景",
+              "year": "c. 1660 – 1661",
+              "medium": "Oil on canvas",
+              "museum": "Mauritshuis, The Hague",
+              "desc": "Light through a gap in the clouds falls on the rooftops of home — Proust called it the most beautiful painting in the world.",
+              "line": "A cloud's shadow crosses the town, and that minute is detained forever.",
+              "wide": true
+            },
+            {
+              "id": "vermeer-letter",
+              "file": "art/vermeer-letter.jpg",
+              "title": "Girl Reading a Letter at an Open Window",
+              "original": "窗前读信的少女",
+              "year": "c. 1657",
+              "medium": "Oil on canvas",
+              "museum": "Gemäldegalerie Alte Meister, Dresden",
+              "desc": "Window light, a curtain, a letter; restoration brought the Cupid on the wall back to daylight — so it was a love letter after all.",
+              "line": "Inside the letter's crease lives someone who isn't there."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modern",
+      "no": "II",
+      "name": "Modern · Light and the Instant",
+      "short": "现代馆",
+      "latin": "LA LUMIÈRE ET L’INSTANT",
+      "en": "The Modern Wing",
+      "intro": "In the nineteenth century painters stepped out of the studio and found that sunlight changes the world every second. Painting stopped copying eternity and began chasing the moment — and the burning heart behind it.",
+      "accent": "#7fb4d8",
+      "wall": "#1d2734",
+      "panel": "#263344",
+      "floor": "#0a0d11",
+      "fog": "#090c10",
+      "lightColor": "#cfe4ff",
+      "frameStyle": "dark",
+      "artists": [
+        {
+          "id": "vangogh",
+          "name": "Vincent van Gogh",
+          "original": "文森特 · 梵高",
+          "dates": "1853 – 1890",
+          "place": "津德尔特 / 阿尔勒 / 奥维尔",
+          "epithet": "The Burning Sunflower",
+          "bio": "He sold one painting in his lifetime, and became the whole world's beloved after it. In ten years he made more than eight hundred canvases, pressing pain, loneliness and an almost reckless love of life into the paint, stroke by stroke, thick enough to stand. He said: 'I dream my painting, and then I paint my dream.'",
+          "works": [
+            {
+              "id": "vangogh-starry",
+              "file": "art/vangogh-starry.jpg",
+              "title": "The Starry Night",
+              "original": "星月夜",
+              "year": "1889",
+              "medium": "Oil on canvas",
+              "museum": "Museum of Modern Art, New York",
+              "desc": "Through the barred window of the asylum at Saint-Rémy, he watched the sky churn into whirlpools, stars swelling like fireworks. This is not what the night looks like — it is what the night feels like, burning inside a troubled mind.",
+              "line": "He painted the roaring in his ears into a whirlpool of stars."
+            },
+            {
+              "id": "vangogh-sunflowers",
+              "file": "art/vangogh-sunflowers.jpg",
+              "title": "Sunflowers",
+              "original": "向日葵",
+              "year": "1888",
+              "medium": "Oil on canvas",
+              "museum": "Neue Pinakothek, Munich",
+              "desc": "He painted vase after vase of sunflowers to dress the little house for Gauguin's arrival. Full bloom and withering share one vase — not flowers, but friendship, and the whole of his hunger for life.",
+              "line": "Blooming and wilting in a single vase, like his short and burning life."
+            },
+            {
+              "id": "vangogh-almond",
+              "file": "art/vangogh-almond.jpg",
+              "title": "Almond Blossom",
+              "original": "盛开的杏花",
+              "year": "1890",
+              "medium": "Oil on canvas",
+              "museum": "Van Gogh Museum, Amsterdam",
+              "desc": "Painted for a newborn nephew: white blossoms opening against a blue sky, the gentlest blessing he could imagine.",
+              "line": "He mailed an entire spring to a child just born.",
+              "wide": true
+            },
+            {
+              "id": "vangogh-terrace",
+              "file": "art/vangogh-terrace.jpg",
+              "title": "Café Terrace at Night",
+              "original": "夜间咖啡馆露台",
+              "year": "1888",
+              "medium": "Oil on canvas",
+              "museum": "Kröller-Müller Museum, Otterlo",
+              "desc": "A night painted without a single stroke of black — gaslight yellow and starlit blue refusing to yield to each other.",
+              "line": "Night doesn't have to be dark — he called a sky of stars as witness."
+            },
+            {
+              "id": "vangogh-bedroom",
+              "file": "art/vangogh-bedroom.jpg",
+              "title": "The Bedroom",
+              "original": "在阿尔勒的卧室",
+              "year": "1888",
+              "medium": "Oil on canvas",
+              "museum": "Van Gogh Museum, Amsterdam",
+              "desc": "The tilted floor, the paired pillows — he wanted to paint 'absolute rest', but the brushstrokes are still feverish.",
+              "line": "He painted a steady bed, and never slept well himself."
+            },
+            {
+              "id": "vangogh-irises",
+              "file": "art/vangogh-irises.jpg",
+              "title": "Irises",
+              "original": "鸢尾花",
+              "year": "1889",
+              "medium": "Oil on canvas",
+              "museum": "Getty Center, Los Angeles",
+              "desc": "The flowerbed from his first week in the asylum: every blue is struggling out of the soil.",
+              "line": "One white iris stands among the blue, the way he stood in a crowd."
+            },
+            {
+              "id": "vangogh-rhone",
+              "file": "art/vangogh-rhone.jpg",
+              "title": "Starry Night Over the Rhône",
+              "original": "罗纳河上的星夜",
+              "year": "1888",
+              "medium": "Oil on canvas",
+              "museum": "Musée d'Orsay, Paris",
+              "desc": "Reflections of gaslight and the Big Dipper sleep in the same river, and a pair of lovers stands on the bank.",
+              "line": "Stars fall into the river and join into the lamps on shore."
+            },
+            {
+              "id": "vangogh-self",
+              "file": "art/vangogh-self.jpg",
+              "title": "Self-Portrait",
+              "original": "自画像",
+              "year": "1889",
+              "medium": "Oil on canvas",
+              "museum": "Musée d'Orsay, Paris",
+              "desc": "Inside blue-green whirls, the eyes are heartbreakingly clear. He painted over forty self-portraits — 'because I cannot afford models, and because I want to paint deeper than a photograph.'",
+              "line": "He studies himself like a fire that refuses to go out."
+            }
+          ]
+        },
+        {
+          "id": "monet",
+          "name": "Claude Monet",
+          "original": "克劳德 · 莫奈",
+          "dates": "1840 – 1926",
+          "place": "巴黎 / 吉维尼",
+          "epithet": "The Chaser of Light",
+          "bio": "Impressionism took its name from his sunrise. He spent a lifetime doing one thing: watching light. The same haystack, the same cathedral, the same pond of waterlilies, painted dozens of times at different hours. Nearly blind in old age, he kept painting the water at Giverny — blurrier and blurrier, closer and closer to the eternal.",
+          "works": [
+            {
+              "id": "monet-sunrise",
+              "file": "art/monet-sunrise.jpg",
+              "title": "Impression, Sunrise",
+              "original": "印象 · 日出",
+              "year": "1872",
+              "medium": "Oil on canvas",
+              "museum": "Musée Marmottan Monet, Paris",
+              "desc": "Morning in the harbour of Le Havre, an orange sun hanging in the mist. A critic sneered that it was 'merely an impression' — and unknowingly christened an entire revolution.",
+              "line": "As that sun rose, the old painting sank beneath the sea."
+            },
+            {
+              "id": "monet-waterlilies",
+              "file": "art/monet-waterlilies.jpg",
+              "title": "Water Lilies",
+              "original": "睡莲",
+              "year": "1906",
+              "medium": "Oil on canvas",
+              "museum": "Art Institute of Chicago",
+              "desc": "No shore, no sky, only the water — clouds and blossoms afloat on one mirror. Monet's late lilies are the closest painting has ever drifted toward music.",
+              "line": "Deep in the pond lies an entire sky, softly crumbled to pieces."
+            },
+            {
+              "id": "monet-parasol",
+              "file": "art/monet-parasol.jpg",
+              "title": "Woman with a Parasol",
+              "original": "撑阳伞的女人",
+              "year": "1875",
+              "medium": "Oil on canvas",
+              "museum": "National Gallery of Art, Washington",
+              "desc": "Camille stands in the wind; skirt, clouds and grass all lean the same way — a sketch of happiness itself.",
+              "line": "The wind blew that day so light, only the light remained."
+            },
+            {
+              "id": "monet-poppies",
+              "file": "art/monet-poppies.jpg",
+              "title": "Poppies",
+              "original": "罂粟田",
+              "year": "1873",
+              "medium": "Oil on canvas",
+              "museum": "Musée d'Orsay, Paris",
+              "desc": "Red dots stream from the crest of the slope to its foot; a mother and child cross the flowers twice.",
+              "line": "Red rolls all the way downhill, and summer begins."
+            },
+            {
+              "id": "monet-rouen",
+              "file": "art/monet-rouen.jpg",
+              "title": "Rouen Cathedral, Full Sunlight",
+              "original": "鲁昂大教堂 · 烈日",
+              "year": "1893",
+              "medium": "Oil on canvas",
+              "museum": "Musée d'Orsay, Paris",
+              "desc": "Under his brush the stone loses its weight and becomes a waterfall of light.",
+              "line": "He painted not the cathedral, but the time burning upon it."
+            },
+            {
+              "id": "monet-magpie",
+              "file": "art/monet-magpie.jpg",
+              "title": "The Magpie",
+              "original": "喜鹊",
+              "year": "1869",
+              "medium": "Oil on canvas",
+              "museum": "Musée d'Orsay, Paris",
+              "desc": "One black bird on a field of snow — and its shadow is violet-blue. Impressionism began re-learning shadows from this snow.",
+              "line": "Snow is not white, shadow is not black; the magpie knows.",
+              "wide": true
+            }
+          ]
+        },
+        {
+          "id": "munch",
+          "name": "Edvard Munch",
+          "original": "爱德华 · 蒙克",
+          "dates": "1863 – 1944",
+          "place": "奥斯陆",
+          "epithet": "The Scream of the Soul",
+          "bio": "His mother died when he was five, his sister when he was fourteen; illness and death were seated at his childhood table. So he tore the curtain off painting and let fear, jealousy, love and despair walk on stage naked for the first time. Expressionism begins on his canvas — from him on, art paints not only what we see, but what we feel.",
+          "works": [
+            {
+              "id": "munch-scream",
+              "file": "art/munch-scream.jpg",
+              "title": "The Scream",
+              "original": "呐喊",
+              "year": "1893",
+              "medium": "Oil, tempera and pastel on cardboard",
+              "museum": "National Museum, Oslo",
+              "desc": "Under a blood-red sky, one scream passes through the whole modern world. Munch wrote: 'I heard the enormous, infinite scream of nature.' The figure is not covering its ears — it is covering its soul.",
+              "line": "The scream on the bridge makes no sound, yet it deafened a century."
+            },
+            {
+              "id": "munch-madonna",
+              "file": "art/munch-madonna.jpg",
+              "title": "Madonna",
+              "original": "麦当娜",
+              "year": "1894",
+              "medium": "Oil on canvas",
+              "museum": "Munch Museum, Oslo",
+              "desc": "The Madonna painted as a woman where love and death entwine, the sacred and the sensual fused in a dark red whirl. Munch painted no blasphemy — only the dizziness of the moment life begins.",
+              "line": "On the border of love and death, she closes her eyes."
+            },
+            {
+              "id": "munch-dance",
+              "file": "art/munch-dance.jpg",
+              "title": "The Dance of Life",
+              "original": "生命之舞",
+              "year": "1899 – 1900",
+              "medium": "Oil on canvas",
+              "museum": "National Museum, Oslo",
+              "desc": "White dress, red dress, black dress — three hours of one woman's life, turning on a midsummer shore.",
+              "line": "Moonlight lies on the sea like a wick that will not burn through.",
+              "wide": true
+            },
+            {
+              "id": "munch-anxiety",
+              "file": "art/munch-anxiety.jpg",
+              "title": "Anxiety",
+              "original": "焦虑",
+              "year": "1894",
+              "medium": "Oil on canvas",
+              "museum": "Munch Museum, Oslo",
+              "desc": "Under the same blood-red sky as the Scream, this time a procession of pale faces comes walking.",
+              "line": "The bridge is the same bridge; fear has learned to queue."
+            }
+          ]
+        },
+        {
+          "id": "klimt",
+          "name": "Gustav Klimt",
+          "original": "古斯塔夫 · 克里姆特",
+          "dates": "1862 – 1918",
+          "place": "维也纳",
+          "epithet": "The Kiss of a Golden Age",
+          "bio": "Standard-bearer of the Vienna Secession, a goldsmith's son. He melted Byzantine gold leaf, Egyptian pattern and fin-de-siècle desire in one crucible, turning portraits into icons and desire into something that glows like religion. He said: 'All art is erotic.'",
+          "works": [
+            {
+              "id": "klimt-kiss",
+              "file": "art/klimt-kiss.jpg",
+              "title": "The Kiss",
+              "original": "吻",
+              "year": "1907 – 1908",
+              "medium": "Oil and gold leaf on canvas",
+              "museum": "Belvedere, Vienna",
+              "desc": "At the edge of a golden cliff the world narrows to two people kissing, the patterns of their robes pouring like a galaxy. With a kilogram of gold leaf, Klimt weighed love.",
+              "line": "On the cliff's edge, gold falling like snow — one kiss, no way back."
+            },
+            {
+              "id": "klimt-adele",
+              "file": "art/klimt-adele.jpg",
+              "title": "Adele Bloch-Bauer I",
+              "original": "阿黛尔 · 布洛赫-鲍尔夫人 I",
+              "year": "1907",
+              "medium": "Oil and gold leaf on canvas",
+              "museum": "Neue Galerie, New York",
+              "desc": "The Woman in Gold. A Viennese salonnière set into a field of gold leaf, her gaze grave and tender at once. Behind the record price sits a family history torn apart by war — and finally returned.",
+              "line": "Inside her golden cage she quietly watches a hundred years of smoke."
+            },
+            {
+              "id": "klimt-birch",
+              "file": "art/klimt-birch.jpg",
+              "title": "Birch Forest",
+              "original": "桦树林",
+              "year": "1903",
+              "medium": "Oil on canvas",
+              "museum": "Private collection",
+              "desc": "Klimt without gold: fallen leaves laid down like a red carpet, and the eyes of the birches blinking quietly.",
+              "line": "The eyes on the trunks watched the leaves fall all autumn long."
+            },
+            {
+              "id": "klimt-deathlife",
+              "file": "art/klimt-deathlife.jpg",
+              "title": "Death and Life",
+              "original": "死与生",
+              "year": "1910 – 1915",
+              "medium": "Oil on canvas",
+              "museum": "Leopold Museum, Vienna",
+              "desc": "Death waits patiently on the left; on the right, life sleeps heaped like a garland of flowers — and no one is awake.",
+              "line": "Death has watched a long time; life sleeps sweetly on.",
+              "wide": true
+            },
+            {
+              "id": "klimt-maiden",
+              "file": "art/klimt-maiden.jpg",
+              "title": "The Maiden",
+              "original": "少女",
+              "year": "1913",
+              "medium": "Oil on canvas",
+              "museum": "National Gallery Prague",
+              "desc": "Sleeping girls curled into one revolving blossom, a dream passed from petal to petal.",
+              "line": "One dream, shared out among seven sleepers."
+            },
+            {
+              "id": "klimt-judith",
+              "file": "art/klimt-judith.jpg",
+              "title": "Judith I",
+              "original": "朱迪斯 I",
+              "year": "1901",
+              "medium": "Oil and gold leaf on canvas",
+              "museum": "Belvedere, Vienna",
+              "desc": "The golden collar half-open, the eyes half-closed — a heroine of scripture painted as a Viennese night.",
+              "line": "Her head tilts back; triumph and desire refuse to part."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "future",
+      "no": "III",
+      "name": "Future · Your Museum",
+      "short": "未来馆",
+      "latin": "ARS FUTURA",
+      "en": "The Future Wing",
+      "intro": "This wing belongs to a future still growing. The golden frames wait empty — for the next artist. Perhaps for you.",
+      "type": "open",
+      "frames": 6,
+      "accent": "#e8a25a",
+      "wall": "#4a4239",
+      "panel": "#5a5044",
+      "floor": "#14110d",
+      "fog": "#13100c",
+      "lightColor": "#ffeed2",
+      "frameStyle": "gold",
+      "artists": []
+    }
+  ],
+  "altLang": {
+    "label": "中文",
+    "config": "gallery.config.zh.json",
+    "lang": "zh"
+  }
+}

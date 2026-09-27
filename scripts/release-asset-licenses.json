@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "approvedSculptureModels": [
+    {
+      "path": "models/venus-de-milo-24k.geometry.json",
+      "sha256": "d197243f388b46ad18050d70fa79c0e7cf73f45306a65b295db5da114eba02a9",
+      "creator": "SMK – Statens Museum for Kunst (National Gallery of Denmark)",
+      "source": "https://open.smk.dk/artwork/image/KAS434",
+      "license": "PDM-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "reviewedAt": "2026-09-27",
+      "reviewer": "maintainer",
+      "notes": "SMK 3D scan of plaster cast KAS434 (Venus de Milo). Downloaded from the SMK Open API (files_3D: w0892g669_smk-venus-de-milo.stl, SHA-256 96e9c5a8e380c3b932526fc561233dffb3c9dbd0549ed9efc956a47851511020; API rights field = Public Domain Mark 1.0). SMK also publishes this scan on Sketchfab under CC0. Processed for Musewalk: 274,272 → 23,992 triangles with meshoptimizer 0.25.0, Z-up → Y-up, scaled to 3.83 m after the engine factor, rotated 180° to face the entrance; normals are recomputed at load."
+    }
+  ],
+  "approvedPublicAssets": [
+    {
+      "path": "og-cover.jpg",
+      "sha256": "e3c467c7495c8f12700411005061f003cc24dd4bffdb7e43fc90c925a7428cff",
+      "creator": "Musewalk contributors",
+      "source": "https://github.com/shuyan-5200/musewalk",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "reviewedAt": "2026-07-12",
+      "reviewer": "maintainer",
+      "notes": "project-generated social preview from the public demo; no private Future-wing content"
+    },
+    {
+      "path": "textures/disturb.jpg",
+      "sha256": "be530999dc00f43d2f7bac7e4ad54747b2158889d6e45fc5d121fb1838e36df6",
+      "creator": "Mitch Featherston",
+      "source": "https://github.com/mrdoob/three.js/blob/dev/examples/textures/disturb.jpg",
+      "license": "CC-BY-2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
+      "reviewedAt": "2026-07-12",
+      "reviewer": "maintainer",
+      "notes": "used unchanged as the spotlight cookie; attribution retained in CREDITS.md"
+    }
+  ],
+  "knownBlockedSculptureModels": [
+    {
+      "path": "models/angel-18k.geometry.json",
+      "sha256": "433e39392103959c7f411b000fe9be9aae83d817097f5d5c339dc7565bba1e60",
+      "source": "https://graphics.stanford.edu/data/3Dscanrep/",
+      "reason": "the Stanford source page does not state a clear CC0 or CC-BY redistribution license"
+    }
+  ],
+  "manualReview": {
+    "requiredFields": [
+      "path",
+      "sha256",
+      "reviewedAt",
+      "reviewer",
+      "decision",
+      "notes"
+    ],
+    "artifacts": [
+      {
+        "path": "docs/screenshots/focus.webp",
+        "sha256": "3e685e8a469787a943b96873ea3e98923de3e29e932862b11fce53d8c6855098",
+        "reviewedAt": "2026-09-27",
+        "reviewer": "maintainer",
+        "decision": "approved",
+        "notes": "regenerated 2026-09-27 from the public English config; Venus de Milo (SMK, public domain) sculpture; public-domain demo artwork only; Future wing holds empty frames only"
+      },
+      {
+        "path": "docs/screenshots/gallery-vangogh.webp",
+        "sha256": "2e67cca1e6b17600a0d15c9ab810a009dae80174085ecf9994a5f79e7661e170",
+        "reviewedAt": "2026-09-27",
+        "reviewer": "maintainer",
+        "decision": "approved",
+        "notes": "regenerated 2026-09-27 from the public English config; Venus de Milo (SMK, public domain) sculpture; public-domain demo artwork only; Future wing holds empty frames only"
+      },
+      {
+        "path": "docs/screenshots/immersion.webp",
+        "sha256": "081a6937272cda32ad10ff7598e3b7c37e0147cba65ddf309130d71ff7819ad9",
+        "reviewedAt": "2026-09-27",
+        "reviewer": "maintainer",
+        "decision": "approved",
+        "notes": "regenerated 2026-09-27 from the public English config; Venus de Milo (SMK, public domain) sculpture; public-domain demo artwork only; Future wing holds empty frames only"
+      },
+      {
+        "path": "docs/screenshots/rotunda.webp",
+        "sha256": "8317a906c1a5863f34ded4c3485003d260ee145f1704119b4f33940888325a4c",
+        "reviewedAt": "2026-09-27",
+        "reviewer": "maintainer",
+        "decision": "approved",
+        "notes": "regenerated 2026-09-27 from the public English config; Venus de Milo (SMK, public domain) sculpture; public-domain demo artwork only; Future wing holds empty frames only"
+      }
+    ]
+  }
+}
